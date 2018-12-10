@@ -1,8 +1,8 @@
 h1 {
-    background-color: #4aaaa5;
+    background-color: #2F4F4F;
     margin-right: 10px;
     margin-left: 10px;
-    color: white;
+    color: #FAF0E6;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 200px;
     text-align: center;
@@ -19,12 +19,13 @@ h1 {
     color: #777777;
     margin: 0;
 }
+
 a:link {
-    color: #777777;
+    color: black;
     text-decoration: none;
 }
 a:visited {
-    color: #777777;
+    color: black;
     text-decoration: none;
 }
 a:hover {
@@ -37,7 +38,7 @@ a:active {
 }
 
 h2 {
-    color: #4aaaa5;
+    color: #2F4F4F;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
@@ -82,7 +83,7 @@ input[type=text], select, textarea {
 
 
 input[type=submit] {
-    background-color: #4aaaa5;
+    background-color: #2F4F4F;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -94,7 +95,7 @@ input[type=submit] {
 
 
 input[type=submit]:hover {
-    background-color: #4aaaa5;
+    background-color: #2F4F4F;
 }
 
 
@@ -113,14 +114,14 @@ hr {
 }
 
 .white-box {
-    background-color: white;
+    background-color: #FAF0E6;
     padding: 20px;
-    width: 960px;
+    width: 100%;
     margin: 120px auto 20px;
 }
 
 .boxed {
-    background-color: white;
+    background-color: #FAF0E6;
    margin-top: 0px;
    margin-bottom: 0px;
    width: 100vw;
@@ -131,11 +132,11 @@ hr {
 }
 
 .polaroid {
-    background-color: #4aaaa5;
+    background-color: #2F4F4F;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 20px;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     float: left;
     margin-left: 150px;
 }
@@ -149,5 +150,142 @@ hr {
 .pcontainer {
     text-align: center;
     padding: 10px 20px;
-    
+    color: white;
+}
+
+
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+/* 
+  Based from this article from Divya Manian - 
+  http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+:before,
+:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    position: relative;
+    margin: 0 auto 1em;
+    padding: 1em 1em .25em 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.title:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 240px;
+    height: 4px;
+    margin-left: -120px;
+    content: '';
+    background-color: #fff;
+}
+
+/* Clip text element */
+.clip-text {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    /* margin: .25em; */
+    padding: .55em;
+    text-align: center;
+    /* Color fallback */
+    color: #fff;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+/* Background */
+.clip-text:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+/* Text Background (black zone) */
+.clip-text:after {
+    position: absolute;
+    z-index: -1;
+    top: .125em;
+    right: .125em;
+    bottom: .125em;
+    left: .125em;
+    /* background-color: #000; */
+}
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+    background-position: -.65em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
+
+.clip-text_thirteen {
+    background-color: #FAF0E6;
 }
